@@ -11,6 +11,13 @@
 		5FBA107D27184A6D00B81A3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA107C27184A6D00B81A3F /* ContentView.swift */; };
 		5FBA107F27184A7100B81A3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBA107E27184A7100B81A3F /* Assets.xcassets */; };
 		5FBA108227184A7100B81A3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBA108127184A7100B81A3F /* Preview Assets.xcassets */; };
+		5FBA108C27185B0C00B81A3F /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA108B27185B0C00B81A3F /* EndPoint.swift */; };
+		5FBA108F27185B7C00B81A3F /* odaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA108E27185B7C00B81A3F /* odaViewModel.swift */; };
+		5FBA109227185D0C00B81A3F /* OdaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA109127185D0C00B81A3F /* OdaModel.swift */; };
+		5FBA109427185D2100B81A3F /* OdaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA109327185D2100B81A3F /* OdaData.swift */; };
+		5FBA1097271998F300B81A3F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA1096271998F300B81A3F /* MenuView.swift */; };
+		5FBA109A2719BDF500B81A3F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBA10992719BDF500B81A3F /* SDWebImageSwiftUI */; };
+		5FBA109C271AE7C800B81A3F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA109B271AE7C800B81A3F /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,12 @@
 		5FBA107C27184A6D00B81A3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5FBA107E27184A7100B81A3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FBA108127184A7100B81A3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5FBA108B27185B0C00B81A3F /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		5FBA108E27185B7C00B81A3F /* odaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = odaViewModel.swift; sourceTree = "<group>"; };
+		5FBA109127185D0C00B81A3F /* OdaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdaModel.swift; sourceTree = "<group>"; };
+		5FBA109327185D2100B81A3F /* OdaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdaData.swift; sourceTree = "<group>"; };
+		5FBA1096271998F300B81A3F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		5FBA109B271AE7C800B81A3F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FBA109A2719BDF500B81A3F /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +65,11 @@
 		5FBA107927184A6D00B81A3F /* oda */ = {
 			isa = PBXGroup;
 			children = (
+				5FBA1095271998D800B81A3F /* View */,
+				5FBA109027185CF100B81A3F /* Model */,
+				5FBA108D27185B6200B81A3F /* ViewModel */,
 				5FBA107A27184A6D00B81A3F /* odaApp.swift */,
+				5FBA108A27185AF300B81A3F /* DataService */,
 				5FBA107C27184A6D00B81A3F /* ContentView.swift */,
 				5FBA107E27184A7100B81A3F /* Assets.xcassets */,
 				5FBA108027184A7100B81A3F /* Preview Content */,
@@ -65,6 +83,40 @@
 				5FBA108127184A7100B81A3F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5FBA108A27185AF300B81A3F /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				5FBA108B27185B0C00B81A3F /* EndPoint.swift */,
+				5FBA109B271AE7C800B81A3F /* DataService.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		5FBA108D27185B6200B81A3F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5FBA108E27185B7C00B81A3F /* odaViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5FBA109027185CF100B81A3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FBA109127185D0C00B81A3F /* OdaModel.swift */,
+				5FBA109327185D2100B81A3F /* OdaData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FBA1095271998D800B81A3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FBA1096271998F300B81A3F /* MenuView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +135,9 @@
 			dependencies = (
 			);
 			name = oda;
+			packageProductDependencies = (
+				5FBA10992719BDF500B81A3F /* SDWebImageSwiftUI */,
+			);
 			productName = oda;
 			productReference = 5FBA107727184A6D00B81A3F /* oda.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 5FBA106E27184A6D00B81A3F;
+			packageReferences = (
+				5FBA10982719BDF500B81A3F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 5FBA107827184A6D00B81A3F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FBA1097271998F300B81A3F /* MenuView.swift in Sources */,
+				5FBA108C27185B0C00B81A3F /* EndPoint.swift in Sources */,
+				5FBA109227185D0C00B81A3F /* OdaModel.swift in Sources */,
+				5FBA109427185D2100B81A3F /* OdaData.swift in Sources */,
+				5FBA108F27185B7C00B81A3F /* odaViewModel.swift in Sources */,
 				5FBA107D27184A6D00B81A3F /* ContentView.swift in Sources */,
 				5FBA107B27184A6D00B81A3F /* odaApp.swift in Sources */,
+				5FBA109C271AE7C800B81A3F /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +405,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5FBA10982719BDF500B81A3F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5FBA10992719BDF500B81A3F /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FBA10982719BDF500B81A3F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5FBA106F27184A6D00B81A3F /* Project object */;
 }
