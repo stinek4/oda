@@ -8,21 +8,50 @@
 import Foundation
 
 struct OdaData: Codable{
-    let product: [Product]
+    let items: [Item]
 }
 
-struct Product: Codable{
+struct Item: Codable{
+    var product: Product
+    var quantity: Int
+    var display_price_total: String
+    let availability: Availability
+}
+
+struct Product: Codable, Identifiable {
     let id: Int
+    let full_name: String
+    let brand: String?
+    let brand_id: Int?
     let name: String
-    let images: [Images]
-    let gross_price: Int
-    let gross_unit_price: Int
+    let name_extra: String
+    let front_url: String
+    let images: [Image]
+    let gross_price: String
+    let gross_unit_price: String
+    let unit_price_quantity_abbreviation: String
+    let unit_price_quantity_name: String
+    let availability: Availability
 }
 
 //CHECK IF RUNNING
     //self.images.thumbnail.url
     //self.images.large.url
-struct Images: Codable{
-    let thumbnail: String
-    let large: String
+struct Image: Codable{
+    let thumbnail: thumbnail
+    let large: large
+}
+
+struct thumbnail: Codable {
+    let url: String
+}
+struct large: Codable {
+    let url: String
+}
+
+struct Availability: Codable {
+    let is_available: Bool
+    let code: String
+    let description: String
+    let description_short: String
 }

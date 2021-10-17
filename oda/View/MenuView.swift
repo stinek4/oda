@@ -12,19 +12,39 @@ import SDWebImageSwiftUI
 struct MenuView: View{
     
     @ObservedObject var viewModel: odaViewModel = odaViewModel()
-    @State private var product = [Product]()
+    @ObservedObject var dataService: DataService = DataService()
     
+   
     var body: some View{
         
-        VStack{
-            List(product, id: \.id){ item in
-                HStack{
-                    Text(item.name)
-//                WebImage(url: URL(string: ""))
-//                Text("product: \(itemList)")
+        VStack(alignment: .leading){
+            ForEach(dataService.products){ product in
+
+            HStack(){
+                WebImage(url: URL(string: product.images[0].thumbnail.url))
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40, alignment: .leading)
+                    .padding(.leading, 2)
+                    .padding(.trailing, 2)
+                VStack(alignment: .leading){
+                    Text(product.name)
+                        .foregroundColor(Color("PrimaryTextColor"))
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 14))
+                    Text(product.name_extra)
+                        .foregroundColor(Color("SecondaryTextColor"))
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 14))
+                }
+                Button{
+                    //increase function
+                } label: {
+
+                }
+            }
             }
         }
-               
-        }
-    }
+   }
 }
+
