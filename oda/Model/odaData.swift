@@ -26,7 +26,7 @@ struct Product: Codable, Identifiable {
     let name: String
     let name_extra: String
     let front_url: String
-    let images: [Image]
+    let images: [Images]
     let gross_price: String
     let gross_unit_price: String
     let unit_price_quantity_abbreviation: String
@@ -34,7 +34,7 @@ struct Product: Codable, Identifiable {
     let availability: Availability
 }
 
-struct Image: Codable{
+struct Images: Codable{
     let thumbnail: thumbnail
     let large: large
 }

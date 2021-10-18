@@ -11,7 +11,7 @@ import SwiftUI
 struct odaApp: App {
     var body: some Scene {
         WindowGroup {
-            MenuView()
+            ListView()
         }
     }
 }

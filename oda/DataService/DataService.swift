@@ -15,26 +15,11 @@ class DataService: ObservableObject{
     @Published var items : [Item] = []
     @Published var products : [Product] = []
     
-
-//    @State var id : Int = 123
-//    @State var name: String = "Haggis"
-    
-
-    
-//    func pushProducts(){
-//        let product = Product.self
-//        var products = []
-//        products.append(product)
-//        print(products)
-//    }
-    
     init(){
         getProducts()
     }
     
     func getProducts(){
-        
-        
         guard let url = URL(string: "\(model.currentUrl)") else { return }
 
         var request = URLRequest(url: url)

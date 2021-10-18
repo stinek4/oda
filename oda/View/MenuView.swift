@@ -8,47 +8,31 @@
 import Foundation
 import SwiftUI
 import SDWebImageSwiftUI
+import UIKit
 
 struct MenuView: View{
     
-    @ObservedObject var viewModel: odaViewModel = odaViewModel()
-    @ObservedObject var dataService: DataService = DataService()
-    
+//    @ObservedObject var viewModel: odaViewModel = odaViewModel()
+//    @ObservedObject var dataService: DataService = DataService()
+//
+//    var pages: [Page]
+//    @State private var currentPage = 0
+//
    
     var body: some View{
         
-        VStack(alignment: .leading){
-            Text("Shoppingcart")
-                .font(.system(size: 25))
-            List(dataService.products){ product in
-
-            HStack(){
-                WebImage(url: URL(string: product.images[0].thumbnail.url))
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50, alignment: .leading)
-                    .padding(.leading, 2)
-                    .padding(.trailing, 2)
-                VStack(alignment: .leading){
-                    Text(product.name)
-                        .foregroundColor(Color("PrimaryTextColor"))
-                        .multilineTextAlignment(.leading)
-                        .font(.system(size: 14))
-                    Text(product.name_extra)
-                        .foregroundColor(Color("SecondaryTextColor"))
-                        .multilineTextAlignment(.leading)
-                        .font(.system(size: 14))
-                }
-            }.frame(minHeight: 0, maxHeight: .infinity)
-                
-                Button{
-                
-                }label:{
-                    Image(systemName: "plus.circle.fill")
-                        .imageScale(.medium)
-                }
-            }
+//        ZStack(alignment: .bottomTrailing) {
+//            MenuController(pages: pages, currentPage: $currentPage)
+//            MenuControl(numberOfPages: pages.count, currentPage: $currentPage)
+//                .frame(width: CGFloat(pages.count * 18))
+//                .padding(.trailing)
+//                }
+        VStack{
+        Text("dsf")
         }
-   }
+        
+    }
+
 }
+
 
