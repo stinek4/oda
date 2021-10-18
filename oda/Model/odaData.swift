@@ -34,9 +34,6 @@ struct Product: Codable, Identifiable {
     let availability: Availability
 }
 
-//CHECK IF RUNNING
-    //self.images.thumbnail.url
-    //self.images.large.url
 struct Image: Codable{
     let thumbnail: thumbnail
     let large: large

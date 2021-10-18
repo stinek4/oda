@@ -18,13 +18,15 @@ struct MenuView: View{
     var body: some View{
         
         VStack(alignment: .leading){
-            ForEach(dataService.products){ product in
+            Text("Shoppingcart")
+                .font(.system(size: 25))
+            List(dataService.products){ product in
 
             HStack(){
                 WebImage(url: URL(string: product.images[0].thumbnail.url))
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 40, height: 40, alignment: .leading)
+                    .frame(width: 50, height: 50, alignment: .leading)
                     .padding(.leading, 2)
                     .padding(.trailing, 2)
                 VStack(alignment: .leading){
@@ -37,12 +39,14 @@ struct MenuView: View{
                         .multilineTextAlignment(.leading)
                         .font(.system(size: 14))
                 }
+            }.frame(minHeight: 0, maxHeight: .infinity)
+                
                 Button{
-                    //increase function
-                } label: {
-
+                
+                }label:{
+                    Image(systemName: "plus.circle.fill")
+                        .imageScale(.medium)
                 }
-            }
             }
         }
    }
