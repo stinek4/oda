@@ -22,10 +22,11 @@ struct ListView: View{
         
         VStack(){
             VStack{
+//MARK: Header
                 Text("Shopping Cart")
                     .font(.system(size: 20).bold())
                     .accessibilityAddTraits(.isHeader)
-            
+                
                 ScrollView{
                     ForEach(dataService.products){ product in
                         HStack(){
@@ -34,8 +35,7 @@ struct ListView: View{
                                 
                             }
                             let basketCount = filteredBasket.count
-                            
-                            
+//MARK: ListView
                             ZStack{
                                 WebImage(url: URL(string: product.images[0].thumbnail.url))
                                     .resizable()
@@ -67,9 +67,9 @@ struct ListView: View{
                                         .font(Font.custom("Rubik", size: 14))
                                 }
                             }
+                            
+//MARK: Buttons
                             HStack(alignment: .bottom){
-                                
-                                
                                 if basketCount > 0 {
                                     Button{
                                         viewModel.intentRemoveFromBasket(
@@ -80,11 +80,8 @@ struct ListView: View{
                                         Image(systemName: "minus.circle.fill")
                                             .resizable().frame(width: 32, height: 32, alignment: .leading)
                                     }
-                                    
                                     Text("\(basketCount)")
                                 }
-                        
-                                                    
                                 Button{
                                     viewModel.intentAddToBasket(
                                         p: product.id,
@@ -95,51 +92,31 @@ struct ListView: View{
                                 .resizable().frame(width: 32, height: 32, alignment: .leading)
                                 .font(Font.title.weight(.light))
                                 }
-                                
                             }
                         }
                         Divider()
                     }
-                    
                 }
-            .padding()
-        }
+                .padding()
+            }
+
+//MARK: Shopping Cart Panel
             
-            if viewModel.itemsInBasket > 0 {
-        HStack(){
-            Image(systemName: "cart")
-                .resizable().frame(width: 24, height: 24, alignment: .leading)
-            Text("\(viewModel.itemsInBasket) products")
-                .foregroundColor(Color("PrimaryTextColor"))
-                .font(Font.custom("Rubik", size: 14))
-            Spacer()
-            Text("\(viewModel.costOfBasket)")
-                .foregroundColor(Color("PrimaryTextColor"))
-                .font(Font.custom("Rubik", size: 14))
+        if viewModel.itemsInBasket > 0 {
+            HStack(){
+                Image(systemName: "cart")
+                    .resizable().frame(width: 24, height: 24, alignment: .leading)
+                Text("\(viewModel.itemsInBasket) products")
+                    .foregroundColor(Color("PrimaryTextColor"))
+                    .font(Font.custom("Rubik", size: 14))
+                Spacer()
+                Text("\(viewModel.costOfBasket)")
+                    .foregroundColor(Color("PrimaryTextColor"))
+                    .font(Font.custom("Rubik", size: 14))
+            }
+            .padding(.leading)
+            .padding(.trailing)
         }
-        .padding(.leading)
-        .padding(.trailing)
         }
     }
 }
-}
-
-
-
-
-//                            HStack(alignment: .bottom){
-//                                Button{
-//                                    viewModel.intentAddToBasket(
-//                                        p: product.id,
-//                                        g: product.gross_price)
-//                                    viewModel.getTotal()
-//                                }label:{
-//                                   Image(systemName: "plus.circle.fill")
-//                                       .resizable().frame(width: 32, height: 32, alignment: .leading)
-//                                }
-//                            }
-//
-
-
-//                                Text("\(viewModel.liveItem)")
-                                

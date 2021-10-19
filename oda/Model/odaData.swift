@@ -13,25 +13,25 @@ struct OdaData: Codable{
 
 struct Item: Codable{
     var product: Product
-    var quantity: Int
-    var display_price_total: String
-    let availability: Availability
+//    var quantity: Int
+//    var display_price_total: String
+//    let availability: Availability
 }
 
 struct Product: Codable, Identifiable {
     let id: Int
     let full_name: String
-    let brand: String?
-    let brand_id: Int?
     let name: String
     let name_extra: String
-    let front_url: String
     let images: [Images]
     let gross_price: String
     let gross_unit_price: String
-    let unit_price_quantity_abbreviation: String
-    let unit_price_quantity_name: String
-    let availability: Availability
+//    let brand: String?
+//    let brand_id: Int?
+//    let front_url: String
+//    let unit_price_quantity_abbreviation: String
+//    let unit_price_quantity_name: String
+//    let availability: Availability
 }
 
 struct Images: Codable{
@@ -46,9 +46,9 @@ struct large: Codable {
     let url: String
 }
 
-struct Availability: Codable {
-    let is_available: Bool
-    let code: String
-    let description: String
-    let description_short: String
-}
+//struct Availability: Codable {
+//    let is_available: Bool
+//    let code: String
+//    let description: String
+//    let description_short: String
+//}

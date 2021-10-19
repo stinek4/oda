@@ -12,13 +12,19 @@ class DataService: ObservableObject{
     
     var model: OdaModel = OdaModel()
 
+    
+//These arrays are set with JSON throug OdaData, now able to use in V.
     @Published var items : [Item] = []
     @Published var products : [Product] = []
     
+    
+//Initializes JSONdecoder right away
     init(){
         getProducts()
     }
     
+//Decodes JSON from EndPoint through M.
+//Sets jsonData through OdaData to be @Published var Arrays at the top of this file.
     func getProducts(){
         guard let url = URL(string: "\(model.currentUrl)") else { return }
 
@@ -32,16 +38,13 @@ class DataService: ObservableObject{
                 print(error)
                 return
             }
-
             guard let data = data else {
                 return
             }
-
             do {
                 let jsonData = try JSONDecoder().decode(OdaData.self, from: data)
                 DispatchQueue.main.async {[weak self] in
                     self?.items = jsonData.items
-//                    print(jsonData.items)
                     
                     self?.products = jsonData.items.map{ item in
                         item.product
