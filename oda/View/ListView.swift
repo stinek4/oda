@@ -15,8 +15,10 @@ struct ListView: View{
     @ObservedObject var viewModel: odaViewModel = odaViewModel()
     @ObservedObject var dataService: DataService = DataService()
     
-   
     var body: some View{
+        
+
+        let basket = viewModel.liveUpdatedCount
         
         VStack(){
             VStack{
@@ -27,6 +29,13 @@ struct ListView: View{
                 ScrollView{
                     ForEach(dataService.products){ product in
                         HStack(){
+                            let filteredBasket = basket.filter{ i in
+                                return i == product.id
+                                
+                            }
+                            let basketCount = filteredBasket.count
+                            
+                            
                             ZStack{
                                 WebImage(url: URL(string: product.images[0].thumbnail.url))
                                     .resizable()
@@ -39,64 +48,98 @@ struct ListView: View{
                                     .foregroundColor(Color("PrimaryTextColor"))
                                     .multilineTextAlignment(.leading)
                                     .font(Font.custom("Rubik", size: 14))
+                                    .font(Font.title.weight(.bold))
                                 Text(product.name_extra)
                                     .foregroundColor(Color("SecondaryTextColor"))
                                     .multilineTextAlignment(.leading)
                                     .font(Font.custom("Rubik", size: 14))
                             }
-                            VStack{
-                                Text(product.gross_price)
-                                    .foregroundColor(Color("PrimaryTextColor"))
-                                    .multilineTextAlignment(.trailing)
-                                    .font(Font.custom("Rubik", size: 14))
-                                Text(product.gross_unit_price)
-                                    .foregroundColor(Color("SecondaryTextColor"))
-                                    .multilineTextAlignment(.trailing)
-                                    .font(Font.custom("Rubik", size: 14))
-                            }
-                       
                             Spacer()
-                            
-                            HStack(alignment: .bottom){
-                                Button{
-                                    
-                                }label:{
-                                    Image(systemName: "minus.circle.fill")
-                                        .resizable().frame(width: 32, height: 32, alignment: .leading)
-                                }
-                                Text("1")
-                                
-                                Button{
-                                    
-                                }label:{
-                                    Image(systemName: "plus.circle.fill")
-                                        .resizable().frame(width: 32, height: 32, alignment: .leading)
+                            VStack{
+                                if basketCount == 0 {
+                                    Text(product.gross_price)
+                                        .foregroundColor(Color("PrimaryTextColor"))
+                                        .multilineTextAlignment(.trailing)
+                                        .font(Font.custom("Rubik", size: 14))
+                                    Text(product.gross_unit_price)
+                                        .foregroundColor(Color("SecondaryTextColor"))
+                                        .multilineTextAlignment(.trailing)
+                                        .font(Font.custom("Rubik", size: 14))
                                 }
                             }
-
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                        .padding(.top, 5)
-                        .padding(.bottom, 5)
+                            HStack(alignment: .bottom){
+                                
+                                
+                                if basketCount > 0 {
+                                    Button{
+                                        viewModel.intentRemoveFromBasket(
+                                            p: product.id,
+                                            g: product.gross_price)
+                                        viewModel.getTotalSum()
+                                    }label:{
+                                        Image(systemName: "minus.circle.fill")
+                                            .resizable().frame(width: 32, height: 32, alignment: .leading)
+                                    }
+                                    
+                                    Text("\(basketCount)")
+                                }
                         
+                                                    
+                                Button{
+                                    viewModel.intentAddToBasket(
+                                        p: product.id,
+                                        g: product.gross_price)
+                                    viewModel.getTotalSum()
+                                }label:{
+                                     Image(systemName: "plus.circle.fill")
+                                .resizable().frame(width: 32, height: 32, alignment: .leading)
+                                .font(Font.title.weight(.light))
+                                }
+                                
+                            }
+                        }
                         Divider()
                     }
+                    
                 }
-            }
             .padding()
         }
+            
+            if viewModel.itemsInBasket > 0 {
         HStack(){
             Image(systemName: "cart")
                 .resizable().frame(width: 24, height: 24, alignment: .leading)
-            Text("11 products")
+            Text("\(viewModel.itemsInBasket) products")
                 .foregroundColor(Color("PrimaryTextColor"))
                 .font(Font.custom("Rubik", size: 14))
             Spacer()
-            Text("sum")
+            Text("\(viewModel.costOfBasket)")
                 .foregroundColor(Color("PrimaryTextColor"))
                 .font(Font.custom("Rubik", size: 14))
         }
         .padding(.leading)
         .padding(.trailing)
+        }
     }
 }
+}
+
+
+
+
+//                            HStack(alignment: .bottom){
+//                                Button{
+//                                    viewModel.intentAddToBasket(
+//                                        p: product.id,
+//                                        g: product.gross_price)
+//                                    viewModel.getTotal()
+//                                }label:{
+//                                   Image(systemName: "plus.circle.fill")
+//                                       .resizable().frame(width: 32, height: 32, alignment: .leading)
+//                                }
+//                            }
+//
+
+
+//                                Text("\(viewModel.liveItem)")
+                                

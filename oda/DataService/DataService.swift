@@ -41,10 +41,11 @@ class DataService: ObservableObject{
                 let jsonData = try JSONDecoder().decode(OdaData.self, from: data)
                 DispatchQueue.main.async {[weak self] in
                     self?.items = jsonData.items
-                    print(jsonData.items)
+//                    print(jsonData.items)
                     
                     self?.products = jsonData.items.map{ item in
                         item.product
+                        
                     }
                 }
                
