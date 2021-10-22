@@ -110,7 +110,7 @@ struct ListView: View{
                     .foregroundColor(Color("PrimaryTextColor"))
                     .font(Font.custom("Rubik", size: 14))
                 Spacer()
-                Text("\(viewModel.costOfBasket)")
+                Text("\(viewModel.costOfBasket, specifier: "%.2f")kr")
                     .foregroundColor(Color("PrimaryTextColor"))
                     .font(Font.custom("Rubik", size: 14))
             }
