@@ -18,9 +18,21 @@ struct OdaModel{
     }
     
 //UserDefaults Arrays
-    var historyBasket: [Int] = []
-    var basketTotal: [String] = []
-    var liveItemCount: [Int] = []
+    var historyBasket: [Int] = []{
+        didSet {
+            UserDefaults.standard.set(historyBasket, forKey: "history")
+        }
+    }
+    var basketTotal: [String] = []{
+        didSet {
+            UserDefaults.standard.set(basketTotal, forKey: "total")
+        }
+    }
+    var liveItemCount: [Int] = []{
+        didSet{
+            UserDefaults.standard.set(liveItemCount, forKey: "count")
+        }
+    }
 
     
 //On init, three UserDefault Arrays are created.

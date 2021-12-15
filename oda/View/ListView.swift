@@ -8,12 +8,17 @@
 import Foundation
 import SwiftUI
 import SDWebImageSwiftUI
-import UIKit
 
 struct ListView: View{
     
     @ObservedObject var viewModel: odaViewModel = odaViewModel()
     @ObservedObject var dataService: DataService = DataService()
+
+    
+    
+    init(){
+        viewModel.getTotalSum()
+    }
     
     var body: some View{
         
@@ -24,7 +29,7 @@ struct ListView: View{
             VStack{
 //MARK: Header
                 Text("Shopping Cart")
-                    .font(.system(size: 20).bold())
+                    .font(Font.custom(Constants.Font.rubikRegular, size: 20).bold())
                     .accessibilityAddTraits(.isHeader)
                 
                 ScrollView{
@@ -45,26 +50,26 @@ struct ListView: View{
                             
                             VStack(alignment: .leading){
                                 Text(product.name)
-                                    .foregroundColor(Color("PrimaryTextColor"))
+                                    .foregroundColor(Color(Constants.Color.primaryTextColor))
                                     .multilineTextAlignment(.leading)
-                                    .font(Font.custom("Rubik", size: 14))
+                                    .font(Font.custom(Constants.Font.rubikRegular, size: 14))
                                     .font(Font.title.weight(.bold))
                                 Text(product.name_extra)
-                                    .foregroundColor(Color("SecondaryTextColor"))
+                                    .foregroundColor(Color(Constants.Color.secondaryTextColor))
                                     .multilineTextAlignment(.leading)
-                                    .font(Font.custom("Rubik", size: 14))
+                                    .font(Font.custom(Constants.Font.rubikRegular, size: 14))
                             }
                             Spacer()
                             VStack{
                                 if basketCount == 0 {
                                     Text(product.gross_price)
-                                        .foregroundColor(Color("PrimaryTextColor"))
+                                        .foregroundColor(Color(Constants.Color.primaryTextColor))
                                         .multilineTextAlignment(.trailing)
-                                        .font(Font.custom("Rubik", size: 14))
+                                        .font(Font.custom(Constants.Font.rubikRegular, size: 14))
                                     Text(product.gross_unit_price)
-                                        .foregroundColor(Color("SecondaryTextColor"))
+                                        .foregroundColor(Color(Constants.Color.secondaryTextColor))
                                         .multilineTextAlignment(.trailing)
-                                        .font(Font.custom("Rubik", size: 14))
+                                        .font(Font.custom(Constants.Font.rubikRegular, size: 14))
                                 }
                             }
                             
@@ -77,7 +82,7 @@ struct ListView: View{
                                             g: product.gross_price)
                                         viewModel.getTotalSum()
                                     }label:{
-                                        Image(systemName: "minus.circle.fill")
+                                        Image(systemName: Constants.Icons.minusIcon)
                                             .resizable().frame(width: 32, height: 32, alignment: .leading)
                                     }
                                     Text("\(basketCount)")
@@ -88,7 +93,7 @@ struct ListView: View{
                                         g: product.gross_price)
                                     viewModel.getTotalSum()
                                 }label:{
-                                     Image(systemName: "plus.circle.fill")
+                                    Image(systemName: Constants.Icons.plusIcon)
                                 .resizable().frame(width: 32, height: 32, alignment: .leading)
                                 .font(Font.title.weight(.light))
                                 }
@@ -102,21 +107,21 @@ struct ListView: View{
 
 //MARK: Shopping Cart Panel
             
-        if viewModel.itemsInBasket > 0 {
+      //  if viewModel.itemsInBasket > 0 {
             HStack(){
                 Image(systemName: "cart")
                     .resizable().frame(width: 24, height: 24, alignment: .leading)
                 Text("\(viewModel.itemsInBasket) products")
-                    .foregroundColor(Color("PrimaryTextColor"))
-                    .font(Font.custom("Rubik", size: 14))
+                    .foregroundColor(Color(Constants.Color.primaryTextColor))
+                    .font(Font.custom(Constants.Font.rubikRegular, size: 14))
                 Spacer()
                 Text("\(viewModel.costOfBasket, specifier: "%.2f")kr")
-                    .foregroundColor(Color("PrimaryTextColor"))
-                    .font(Font.custom("Rubik", size: 14))
+                    .foregroundColor(Color(Constants.Color.primaryTextColor))
+                    .font(Font.custom(Constants.Font.rubikRegular, size: 14))
             }
             .padding(.leading)
             .padding(.trailing)
-        }
+       // }
         }
     }
 }

@@ -20,7 +20,11 @@ class odaViewModel: ObservableObject{
 //calls on passURL() to get ahold of Endpoints url
     init(){
         model.passURL()
+        updateLive()
+        getCount()
+        
     }
+    
 
 //function called through button OnClick in V. Sends parameters p(product.id) and g(product.gross_price) to M
 //calls on getCount() + updateLive()
