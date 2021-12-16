@@ -8,14 +8,7 @@
 import Foundation
 
 struct OdaModel{
-    
-    var currentUrl: String = EndPoint.hostJSON
-    
-    
-//Passes URL from Endpoint through Model to ViewModel
-    mutating func passURL(){
-        currentUrl = EndPoint.hostJSON
-    }
+
     
 //UserDefaults Arrays
     var historyBasket: [Int] = []{

@@ -10,9 +10,6 @@ import SwiftUI
 
 class DataService: ObservableObject{
     
-    var model: OdaModel = OdaModel()
-
-    
 //These arrays are set with JSON throug OdaData, now able to use in V.
     @Published var items : [Item] = []
     @Published var products : [Product] = []
@@ -23,10 +20,10 @@ class DataService: ObservableObject{
         getProducts()
     }
     
-//Decodes JSON from EndPoint through M.
+//Decodes JSON from EndPoint
 //Sets jsonData through OdaData to be @Published var Arrays at the top of this file.
     func getProducts(){
-        guard let url = URL(string: "\(model.currentUrl)") else { return }
+        guard let url = URL(string: "\(EndPoint.hostJSON)") else { return }
 
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

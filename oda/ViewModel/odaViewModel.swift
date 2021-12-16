@@ -17,9 +17,8 @@ class odaViewModel: ObservableObject{
     @Published var costOfBasket = 0.00
     @Published var liveUpdatedCount: [Int] = []
     
-//calls on passURL() to get ahold of Endpoints url
+//Initiates the lists, so that didSet in UserDefaults saves every time the app updates
     init(){
-        model.passURL()
         updateLive()
         getCount()
         getTotalSum()
