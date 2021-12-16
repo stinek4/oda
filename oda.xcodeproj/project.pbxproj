@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F86D8E1276A0FB4001BB5F4 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F86D8E0276A0FB4001BB5F4 /* Buttons.swift */; };
-		5F86D8E3276A2B34001BB5F4 /* ListViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F86D8E2276A2B34001BB5F4 /* ListViewItem.swift */; };
 		5F86D8E6276A44C5001BB5F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F86D8E5276A44C5001BB5F4 /* Constants.swift */; };
 		5F86D8E8276A6FF7001BB5F4 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F86D8E7276A6FF7001BB5F4 /* ShoppingCart.swift */; };
 		5FBA107B27184A6D00B81A3F /* odaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA107A27184A6D00B81A3F /* odaApp.swift */; };
@@ -20,13 +18,21 @@
 		5FBA109427185D2100B81A3F /* OdaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA109327185D2100B81A3F /* OdaData.swift */; };
 		5FBA109A2719BDF500B81A3F /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBA10992719BDF500B81A3F /* SDWebImageSwiftUI */; };
 		5FBA109C271AE7C800B81A3F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBA109B271AE7C800B81A3F /* DataService.swift */; };
+		5FF13C49276B85F100BE38DB /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C48276B85F100BE38DB /* ThumbnailView.swift */; };
+		5FF13C4B276B8E6500BE38DB /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C4A276B8E6500BE38DB /* PlusButton.swift */; };
+		5FF13C4D276B947800BE38DB /* WhitePlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C4C276B947700BE38DB /* WhitePlusButton.swift */; };
+		5FF13C50276B95CF00BE38DB /* MinusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C4F276B95CF00BE38DB /* MinusButton.swift */; };
+		5FF13C52276B969C00BE38DB /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C51276B969C00BE38DB /* Header.swift */; };
+		5FF13C54276B978800BE38DB /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C53276B978800BE38DB /* NameView.swift */; };
+		5FF13C56276B987100BE38DB /* NameExtraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C55276B987100BE38DB /* NameExtraView.swift */; };
+		5FF13C58276B992A00BE38DB /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C57276B992A00BE38DB /* PriceView.swift */; };
+		5FF13C5A276BA3FC00BE38DB /* PromotionPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C59276BA3FC00BE38DB /* PromotionPriceView.swift */; };
+		5FF13C5C276BA7AB00BE38DB /* PromotionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF13C5B276BA7AB00BE38DB /* PromotionLabel.swift */; };
 		5FF329E0271DE5EC00D1AD0F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF329DF271DE5EB00D1AD0F /* ListView.swift */; };
 		5FF329EA271E137200D1AD0F /* Rubik.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FF329E8271E137200D1AD0F /* Rubik.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F86D8E0276A0FB4001BB5F4 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		5F86D8E2276A2B34001BB5F4 /* ListViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewItem.swift; sourceTree = "<group>"; };
 		5F86D8E5276A44C5001BB5F4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F86D8E7276A6FF7001BB5F4 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		5FBA107727184A6D00B81A3F /* oda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oda.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +44,16 @@
 		5FBA109127185D0C00B81A3F /* OdaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdaModel.swift; sourceTree = "<group>"; };
 		5FBA109327185D2100B81A3F /* OdaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdaData.swift; sourceTree = "<group>"; };
 		5FBA109B271AE7C800B81A3F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		5FF13C48276B85F100BE38DB /* ThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
+		5FF13C4A276B8E6500BE38DB /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
+		5FF13C4C276B947700BE38DB /* WhitePlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePlusButton.swift; sourceTree = "<group>"; };
+		5FF13C4F276B95CF00BE38DB /* MinusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusButton.swift; sourceTree = "<group>"; };
+		5FF13C51276B969C00BE38DB /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		5FF13C53276B978800BE38DB /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		5FF13C55276B987100BE38DB /* NameExtraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameExtraView.swift; sourceTree = "<group>"; };
+		5FF13C57276B992A00BE38DB /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
+		5FF13C59276BA3FC00BE38DB /* PromotionPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionPriceView.swift; sourceTree = "<group>"; };
+		5FF13C5B276BA7AB00BE38DB /* PromotionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionLabel.swift; sourceTree = "<group>"; };
 		5FF329DF271DE5EB00D1AD0F /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		5FF329E8271E137200D1AD0F /* Rubik.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rubik.ttf; sourceTree = "<group>"; };
 		5FF329EC271E15FF00D1AD0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -133,12 +149,28 @@
 		5FBA1095271998D800B81A3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5FF13C4E276B95A900BE38DB /* Buttons */,
 				5FF329DF271DE5EB00D1AD0F /* ListView.swift */,
+				5FF13C57276B992A00BE38DB /* PriceView.swift */,
+				5FF13C59276BA3FC00BE38DB /* PromotionPriceView.swift */,
+				5FF13C55276B987100BE38DB /* NameExtraView.swift */,
+				5FF13C53276B978800BE38DB /* NameView.swift */,
+				5FF13C48276B85F100BE38DB /* ThumbnailView.swift */,
 				5F86D8E7276A6FF7001BB5F4 /* ShoppingCart.swift */,
-				5F86D8E2276A2B34001BB5F4 /* ListViewItem.swift */,
-				5F86D8E0276A0FB4001BB5F4 /* Buttons.swift */,
+				5FF13C51276B969C00BE38DB /* Header.swift */,
+				5FF13C5B276BA7AB00BE38DB /* PromotionLabel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5FF13C4E276B95A900BE38DB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				5FF13C4C276B947700BE38DB /* WhitePlusButton.swift */,
+				5FF13C4F276B95CF00BE38DB /* MinusButton.swift */,
+				5FF13C4A276B8E6500BE38DB /* PlusButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		5FF329E6271E134300D1AD0F /* Shared */ = {
@@ -234,16 +266,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F86D8E1276A0FB4001BB5F4 /* Buttons.swift in Sources */,
 				5F86D8E6276A44C5001BB5F4 /* Constants.swift in Sources */,
-				5F86D8E3276A2B34001BB5F4 /* ListViewItem.swift in Sources */,
+				5FF13C4D276B947800BE38DB /* WhitePlusButton.swift in Sources */,
+				5FF13C54276B978800BE38DB /* NameView.swift in Sources */,
 				5FBA108C27185B0C00B81A3F /* EndPoint.swift in Sources */,
+				5FF13C58276B992A00BE38DB /* PriceView.swift in Sources */,
 				5FBA109227185D0C00B81A3F /* OdaModel.swift in Sources */,
 				5F86D8E8276A6FF7001BB5F4 /* ShoppingCart.swift in Sources */,
 				5FBA109427185D2100B81A3F /* OdaData.swift in Sources */,
 				5FBA108F27185B7C00B81A3F /* odaViewModel.swift in Sources */,
 				5FBA107B27184A6D00B81A3F /* odaApp.swift in Sources */,
+				5FF13C5C276BA7AB00BE38DB /* PromotionLabel.swift in Sources */,
+				5FF13C49276B85F100BE38DB /* ThumbnailView.swift in Sources */,
 				5FBA109C271AE7C800B81A3F /* DataService.swift in Sources */,
+				5FF13C5A276BA3FC00BE38DB /* PromotionPriceView.swift in Sources */,
+				5FF13C52276B969C00BE38DB /* Header.swift in Sources */,
+				5FF13C4B276B8E6500BE38DB /* PlusButton.swift in Sources */,
+				5FF13C50276B95CF00BE38DB /* MinusButton.swift in Sources */,
+				5FF13C56276B987100BE38DB /* NameExtraView.swift in Sources */,
 				5FF329E0271DE5EC00D1AD0F /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
