@@ -9,6 +9,6 @@ import Foundation
 
 struct EndPoint{
     
-    static let hostJSON = "https://api.jsonbin.io/b/60832bec4465377a6bc6b6e6"
+    static let hostJSON = "https://api.jsonbin.io/b/608071a7a2213a0c1428343f/1"
     
 }

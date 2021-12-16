@@ -22,7 +22,7 @@ class odaViewModel: ObservableObject{
         model.passURL()
         updateLive()
         getCount()
-        
+        getTotalSum()
     }
     
 

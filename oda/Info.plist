@@ -4,7 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Fonts/Rubik.ttf</string>
+		<string>Rubik.ttf</string>
 	</array>
 </dict>
 </plist>

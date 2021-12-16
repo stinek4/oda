@@ -13,15 +13,13 @@ struct ListView: View{
     
     @ObservedObject var viewModel: odaViewModel = odaViewModel()
     @ObservedObject var dataService: DataService = DataService()
-
-    
     
     init(){
         viewModel.getTotalSum()
     }
     
     var body: some View{
-        
+
 
         let basket = viewModel.liveUpdatedCount
         
@@ -40,6 +38,9 @@ struct ListView: View{
                                 
                             }
                             let basketCount = filteredBasket.count
+                            let isAvailable = product.availability.is_available || false
+                            let isDiscounted = product.discount?.is_discounted ?? true
+                            
 //MARK: ListView
                             ZStack{
                                 WebImage(url: URL(string: product.images[0].thumbnail.url))
@@ -54,22 +55,38 @@ struct ListView: View{
                                     .multilineTextAlignment(.leading)
                                     .font(Font.custom(Constants.Font.rubikRegular, size: 14))
                                     .font(Font.title.weight(.bold))
+                                if isAvailable == true{
                                 Text(product.name_extra)
                                     .foregroundColor(Color(Constants.Color.secondaryTextColor))
                                     .multilineTextAlignment(.leading)
                                     .font(Font.custom(Constants.Font.rubikRegular, size: 14))
+                                }else{
+                                    Text("Out of stock")
+                                        .foregroundColor(Color(Constants.Color.ooSColor))
+                                        .multilineTextAlignment(.leading)
+                                        .font(Font.custom(Constants.Font.rubikRegular, size: 14))
+                                }
                             }
                             Spacer()
                             VStack{
-                                if basketCount == 0 {
-                                    Text(product.gross_price)
+                                if (basketCount == 0){
+                                    Text(product.gross_price + " kr")
                                         .foregroundColor(Color(Constants.Color.primaryTextColor))
                                         .multilineTextAlignment(.trailing)
                                         .font(Font.custom(Constants.Font.rubikRegular, size: 14))
-                                    Text(product.gross_unit_price)
+                                    Text("kr " + product.gross_unit_price + "/" + product.unit_price_quantity_abbreviation)
                                         .foregroundColor(Color(Constants.Color.secondaryTextColor))
                                         .multilineTextAlignment(.trailing)
-                                        .font(Font.custom(Constants.Font.rubikRegular, size: 14))
+                                        .font(Font.custom(Constants.Font.rubikRegular, size: 12))
+//                                }else{
+//                                    Text("kr " + product.gross_unit_price + "/" + product.unit_price_quantity_abbreviation)
+//                                       .foregroundColor(Color(Constants.Color.accentColor))
+//                                       .multilineTextAlignment(.trailing)
+//                                       .font(Font.custom(Constants.Font.rubikRegular, size: 12))
+//                                   Text("kr " + product.discount?.undiscounted_gross_price)
+//                                       .foregroundColor(Color(Constants.Color.secondaryTextColor))
+//                                       .multilineTextAlignment(.trailing)
+//                                       .font(Font.custom(Constants.Font.rubikRegular, size: 12))
                                 }
                             }
                             
@@ -82,46 +99,43 @@ struct ListView: View{
                                             g: product.gross_price)
                                         viewModel.getTotalSum()
                                     }label:{
-                                        Image(systemName: Constants.Icons.minusIcon)
+                                        Image(systemName: Constants.Icons.whiteMinusIcon)
                                             .resizable().frame(width: 32, height: 32, alignment: .leading)
+                                            .foregroundColor(Color(Constants.Color.secondaryTextColor))
                                     }
                                     Text("\(basketCount)")
+                                        .font(Font.custom(Constants.Font.rubikRegular, size: 16))
+                                        .padding(.bottom, 5)
                                 }
                                 Button{
                                     viewModel.intentAddToBasket(
                                         p: product.id,
                                         g: product.gross_price)
                                     viewModel.getTotalSum()
+                                        
                                 }label:{
-                                    Image(systemName: Constants.Icons.plusIcon)
-                                .resizable().frame(width: 32, height: 32, alignment: .leading)
-                                .font(Font.title.weight(.light))
-                                }
+                                    if isAvailable == true{
+                                        Image(systemName: Constants.Icons.plusIcon)
+                                            .resizable().frame(width: 32, height: 32, alignment: .leading)
+                                            .foregroundColor(Color(Constants.Color.accentColor))
+                                    }else{
+                                        Image(systemName: Constants.Icons.whitePlusIcon)
+                                            .resizable().frame(width: 32, height: 32, alignment: .leading)
+                                            .foregroundColor(Color(Constants.Color.secondaryTextColor))
+                                    }
+                                }.disabled(isAvailable == false)
                             }
-                        }
+                        
                         Divider()
                     }
                 }
                 .padding()
             }
-
-//MARK: Shopping Cart Panel
             
-      //  if viewModel.itemsInBasket > 0 {
-            HStack(){
-                Image(systemName: "cart")
-                    .resizable().frame(width: 24, height: 24, alignment: .leading)
-                Text("\(viewModel.itemsInBasket) products")
-                    .foregroundColor(Color(Constants.Color.primaryTextColor))
-                    .font(Font.custom(Constants.Font.rubikRegular, size: 14))
-                Spacer()
-                Text("\(viewModel.costOfBasket, specifier: "%.2f")kr")
-                    .foregroundColor(Color(Constants.Color.primaryTextColor))
-                    .font(Font.custom(Constants.Font.rubikRegular, size: 14))
-            }
-            .padding(.leading)
-            .padding(.trailing)
-       // }
+//MARK: Shoppingcart
+            ShoppingCart()
         }
     }
+}
+
 }
